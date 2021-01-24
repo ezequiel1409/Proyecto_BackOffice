@@ -1,0 +1,12 @@
+body{
+    overflow: hidden;
+    font-weight: 300;
+
+}
+#navbar-container{
+    min-height: 100vh;
+}
+
+#navbar-container .logo{
+   padding: .875rem 1.25rem;
+}

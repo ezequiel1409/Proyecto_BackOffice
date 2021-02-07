@@ -51,58 +51,180 @@
               </div>
             </nav>
 
-            <div class="container">
-              <div class="row topbar">
+            <div class="container-fluid">
+              
+              <div class="row -topbar ml-auto mb-2  ">
+                <div class="col-4 ">
+                  <form class="bd-search position-relative me-auto">
+                    <span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="search" class="form-control ds-input" id="search-input" placeholder="Buscar.." aria-label="Search docs for..." autocomplete="off" data-bd-docs-version="5.0" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, &quot;Noto Sans&quot;, &quot;Liberation Sans&quot;, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span>
+                  </form>
 
-                <ul class="nav justify-content-center d-flex">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Active</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li>
-                </ul>
+                </div>
+                <div class="col-4 me-auto">
+                  <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#Editar" >Editar</button>
 
+                  <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#agregarProducto" ><i class="icon ion-md-add mr-2" ></i>Agregar un producto</button>
+                  
+                  <div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Agregar un producto</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container-fluid">
+                              <div class="row"> 
+                                <label for="formFileMultiple" class="form-label">Agregue las imagenes que desea</label>
+                                <input class="form-control" type="file" id="formFileMultiple" multiple>
+                              <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="formGroupExampleInput" class="form-label">Marca</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Marca">
+                                  </div>
+                                  <div class="mb-3">
+                                    <label for="formGroupExampleInput2" class="form-label">Nombre de producto</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                                  </div>
+                              </div>
+                            
+                              </div>
+                            
+                            
+                          </div>
+                     
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                
+               
               </div>
-              <div class="row">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Codigo Producto</th>
-                      <th scope="col">Imagen</th>
-                      <th scope="col">Nombre del producto</th>
-                      <th scope="col">Categoria</th>
-                      <th scope="col">Precio</th>
-                      <th scope="col">Stock</th>
-                      <th scope="col">Estado</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                      <td>@fat</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td colspan="2">Larry the Bird</td>
-                      <td>@twitter</td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="row"> 
+                  <div class="col col-md-2 d-none d-md-block visible-when-content-ready">
+                    <div class="visible-when-content-ready mb-4 pb-1">
+  
+                          <div class="d-none d-md-block">
+                                          <h3 class="title-section mb-4">Filtrar por:</h3>
+                                      <ul class="list-unstyled"> 
+                                        <li class="mb-1">
+                                          <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#marca-collapse" aria-expanded="false">
+                                           Marca
+                                          </button>
+                                          <div class="collapse" id="marca-collapse">
+                                            <ul class="list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">Dermaglos</a></li>                                            
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">Components</a></li>
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">CSS variables</a></li>
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">Optimize</a></li>
+                                            </ul>
+                                          </div>
+                                        </li>
+                                        <li class="mb-1">
+                                          <button class="btn d-inline-flex align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tipoProducto-collapse" aria-expanded="false">
+                                           Tipo de producto
+                                          </button>
+                                          <div class="collapse" id="tipoProducto-collapse">
+                                            <ul class="list-unstyled fw-normal pb-1 small">
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">Dermaglos</a></li>                                            
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">Components</a></li>
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">CSS variables</a></li>
+                                                <li><a href="#" class="d-inline-flex align-items-center rounded">Optimize</a></li>
+                                            </ul>
+                                          </div>
+                                        </li>
+                                        </ul>
+                          </div>
+                      </div>
+
+                    </div>
+
+                <div class="col-10">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Codigo Producto</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col">Nombre del producto</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">2121321321311</th>
+                        <td><img src="img/añadir.png" height="50" href="img/añadir.png"> </td>
+                        <td>Dermaglos Solar FPS 50</td>
+                        <td>Dermaglos </td>
+                        <td>Cosmeticos</td>
+                        <td>40.000$</td>
+                        <td>0</td>
+                        <td>Inactiva</td>
+                        <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                          <label class="form-check-label" for="flexCheckChecked"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2121321321311</th>
+                        <td><img src="img/añadir.png" height="50" href="img/añadir.png"> </td>
+                        <td>Rexona</td>
+                        <td>Dermaglos </td>
+                        <td>Cosmeticos</td>
+                        <td>450.000$</td>
+                        <td>2</td>
+                        <td>Activa</td>
+                        <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                          <label class="form-check-label" for="flexCheckChecked"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2121321321311</th>
+                        <td><img src="img/añadir.png" height="50" href="img/añadir.png"> </td>
+                        <td>Dermaglos Solar FPS 50</td>
+                        <td>Dermaglos </td>
+                        <td>Cosmeticos</td>
+                        <td>40.000$</td>
+                        <td>0</td>
+                        <td>Inactiva</td>
+                        <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                          <label class="form-check-label" for="flexCheckChecked"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2121321321311</th>
+                        <td><img src="img/añadir.png" height="50" href="img/añadir.png"> </td>
+                        <td>Dermaglos Solar FPS 50</td>
+                        <td>Dermaglos </td>
+                        <td>Cosmeticos</td>
+                        <td>40.000$</td>
+                        <td>0</td>
+                        <td>Inactiva</td>
+                        <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                          <label class="form-check-label" for="flexCheckChecked"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2121321321311</th>
+                        <td><img src="img/añadir.png" height="50" href="img/añadir.png"> </td>
+                        <td>Dermaglos Solar FPS 50</td>
+                        <td>Dermaglos </td>
+                        <td>Cosmeticos</td>
+                        <td>40.000$</td>
+                        <td>0</td>
+                        <td>Inactiva</td>
+                        <td> <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                          <label class="form-check-label" for="flexCheckChecked"> </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
 
               </div>
 
